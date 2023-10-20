@@ -28,7 +28,7 @@ sleep 5
 echo "---------------------------"
 
 # Clone the repository and build the project
-git clone https://github.com/tr4avler/XENGPUMiner_salt.git
+git clone https://github.com/tr4avler/XENGPUMiner.git
 sleep 5
 echo "---------------------------"
 
