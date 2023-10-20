@@ -28,11 +28,11 @@ sleep 5
 echo "---------------------------"
 
 # Clone the repository and build the project
-git clone https://github.com/tr4avler/XENGPUMiner.git
+git clone https://github.com/dirrrtyjesus/sleepingbear.git
 sleep 5
 echo "---------------------------"
 
-cd XENGPUMiner
+cd sleepingbear
 sleep 5
 echo "---------------------------"
 
@@ -54,7 +54,7 @@ sudo pip install -U -r requirements.txt
 sleep 5
 echo "---------------------------"
 
-sudo nohup python3 miner.py --gpu=true > miner.log 2>&1 &
+sudo nohup python3 miner.py > miner.log 2>&1 &
 sleep 5
 echo "---------------------------"
 
