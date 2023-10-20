@@ -54,7 +54,7 @@ sudo pip install -U -r requirements.txt
 sleep 5
 echo "---------------------------"
 
-sudo nohup python3 miner.py > miner.log 2>&1 &
+sudo nohup python3 miner.py -g 1 > miner.log 2>&1 &
 sleep 5
 echo "---------------------------"
 
