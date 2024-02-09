@@ -2,62 +2,71 @@
 
 # Update package list and install necessary packages
 
-sudo apt update
-sleep 5
+# Install Python packages
+echo "Installing Python packages..."
+pip install requests
+sleep 3
 echo "---------------------------"
 
-sudo apt -y install ocl-icd-opencl-dev
-sleep 5
+pip install eth-utils
+sleep 3
 echo "---------------------------"
 
-sudo apt -y install nano
-sleep 5
+pip install paramiko
+sleep 3
 echo "---------------------------"
 
-sudo apt -y install htop
-sleep 5
+pip install prettytable
+sleep 3
 echo "---------------------------"
 
-# sudo apt -y install nvtop
-sudo apt -y install cmake
-sleep 5
+pip install flask
+sleep 3
 echo "---------------------------"
 
-sudo apt -y install python3-pip
-sleep 5
+pip install flask-socketio
+sleep 3
+echo "---------------------------"
+
+# Install system packages
+echo "Installing system packages..."
+# Replace 'sudo apt-get install' with the appropriate package manager command for your system if not using apt-get
+sudo apt-get update
+sleep 3
+echo "---------------------------"
+
+sudo apt-get install -y python3-dev python3-pip
+sleep 3
+echo "---------------------------"
+
+sudo apt-get install -y libssl-dev libffi-dev
+sleep 3
+echo "---------------------------"
+
+sudo apt-get install -y build-essential
+sleep 3
+echo "---------------------------"
+
+sudo apt-get install -y curl
+sleep 3
+echo "---------------------------"
+
+sudo apt-get install -y git
+sleep 3
 echo "---------------------------"
 
 # Clone the repository and build the project
-git clone https://github.com/shanhaicoder/XENGPUMiner.git
-sleep 5
+echo "Cloning the repository and building the project..."
+wget https://github.com/tr4avler/XENBLOCK_vast_tool.git
+sleep 3
 echo "---------------------------"
 
-cd XENGPUMiner
-sleep 5
+cd XENBLOCK_vast_tool
+sleep 3
 echo "---------------------------"
 
-chmod +x build.sh
-sleep 5
+sudo python3 app.py
+sleep 3
 echo "---------------------------"
 
-./build.sh
-sleep 5
-echo "---------------------------"
-
-# Update the configuration file
-sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = 0x60a66f137D8d90Db37CB0078E5624C57911d2804/g' config.conf
-sleep 5
-echo "---------------------------"
-
-# Install Python requirements
-sudo pip install -U -r requirements.txt
-sleep 5
-echo "---------------------------"
-
-sudo nohup python3 miner.py --gpu=true > miner.log 2>&1 &
-sleep 5
-echo "---------------------------"
-
-sudo nohup ./xengpuminer > xengpuminer.log 2>&1 &
-sleep 5
-echo "---------------------------"
+echo "Installation complete."
